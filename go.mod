@@ -1,4 +1,4 @@
-module api
+module github.com/Deeksha-hub-05/Go_URLShortener/api
 
 go 1.26.5
 
