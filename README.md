@@ -74,13 +74,6 @@ Go_URLShortener/
 
 Create a `.env` file inside the **api** folder.
 
-```env
-DB_ADDR=db:6379
-DB_PASS=
-APP_PORT=:3000
-DOMAIN=http://localhost:3000
-API_QUOTA=10
-```
 
 ---
 
