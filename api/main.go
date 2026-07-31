@@ -12,6 +12,10 @@ import (
 )
 
 func setupRoutes(app *fiber.App) {
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Go URL Shortener API is running 🚀")
+	})
+
 	app.Get("/:url", routes.ResolveURL)
 	app.Post("/api/v1", routes.ShortenURL)
 }
