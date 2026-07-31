@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"os"
 
@@ -18,10 +17,10 @@ func setupRoutes(app *fiber.App) {
 }
 
 func main() {
-	err := godotenv.Load()
-
-	if err != nil {
-		fmt.Println(err)
+	if os.Getenv("APP_PORT") == "" {
+		if err := godotenv.Load(); err != nil {
+			log.Println(".env file not found")
+		}
 	}
 
 	app := fiber.New()

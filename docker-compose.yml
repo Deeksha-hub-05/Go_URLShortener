@@ -1,0 +1,27 @@
+services:
+  api:
+    build:
+      context: ./api
+    container_name: urlshortener-api
+
+    ports:
+      - "3000:3000"
+
+    env_file:
+      - ./api/.env
+
+    depends_on:
+      - db
+
+  db:
+    image: redis:7-alpine
+    container_name: urlshortener-db
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
